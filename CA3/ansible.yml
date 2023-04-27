@@ -1,0 +1,24 @@
+#### Configuration code for Ansible
+
+Playbook Code
+```yaml
+---
+- name: start an instance with a public IP address
+  hosts: localhost
+  connection: local
+  gather_facts: no
+  tasks:
+    - name: Create EC2
+      amazon.aws.ec2_instance:
+        name: "public-compute-instance"
+        key_name: "po's-key"
+        vpc_subnet_id: subnet-0ab5f1f1f619f691f
+        instance_type: t2.micro
+        security_group: default
+        network:
+          assign_public_ip: true
+        image_id: ami-0f8ca728008ff5af4
+        state: running
+        tags:
+          Environment: Testing
+```
