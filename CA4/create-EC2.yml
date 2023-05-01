@@ -8,12 +8,12 @@
    vars:
      keypair: yashepam
      instance_type: t2.micro
-     image: ami-0c768662cc797cd75
+     image: ami-02eb7a4783e7e9317
      wait: yes
      group: webserver
      count: 1
      region: ap-south-1
-     security_group: ec2-security-group
+     security_group: default
 
    tasks:
 
@@ -45,7 +45,7 @@
               cidr_ip: 0.0.0.0/0
        register: basic_firewall
 
-     - name: Launch the new EC2 Instance for CA4
+     - name: Launch the new EC2 Instance
        local_action:  ec2
                       group={{ security_group }}
                       instance_type={{ instance_type}}
@@ -60,4 +60,4 @@
        with_items: "{{ ec2.instances }}"
        args:
          tags:
-           Name: CA4-MyTargetEc2Instance
+           Name: MyTargetEc2InstanceCA4
