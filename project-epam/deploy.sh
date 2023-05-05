@@ -40,7 +40,7 @@ APPNAME $app_name
 ENV $env_name 
 SERVER COUNT ${count_instance:-1} 
 INSTANCE TYPE ${instance_type:-t2.micro}
-USER_NAME ${user_name:-deploy}"
+USER_NAME ${user_name:-Yashkumar-11910683}"
 
 
 # PROVIDER
@@ -57,7 +57,7 @@ export TF_VAR_AWS_SECRET_ACCESS_KEY=$AWS_SECRET_ACCESS_KEY
 #
 ## Terraform
 #
-export TF_VAR_USER_NAME=${user_name:-deploy}
+export TF_VAR_USER_NAME=${user_name:-Yashkumar-11910683}
 export TF_VAR_NUM_SERVERS=${count_instance:-1}
 export TF_VAR_SERVER_SIZE=${instance_type:-t2.micro}
 export TF_VAR_ENV_NAME=${env_name:-dev}
@@ -76,7 +76,7 @@ then
     cd terraform/aws
     terraform init
     terraform get
-    terraform apply .
+    terraform apply
 else 
    echo "Exiting .."
    exit 2

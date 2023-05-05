@@ -1,37 +1,49 @@
 variable "key_name" {
-    description = "yashepam"
+    description = "Name of the SSH keypair to use in AWS."
+    default="yashepam-01"
 }
 
 variable "USER_NAME" {
-    description = "yashepam"
+    description = "Username to be used in the names of created resources."
+    default = "Yashkumar-11910683"
 }
 
 variable "key_path" {
-    description = "/home/Cactus/Downloads/yashepam"
-    default = ""
+    description = "Path to the private portion of the SSH key specified."
+    default = "/home/Cactus/Downloads/yashepam-01"
 }
 variable "subnet_id" {
-    description = "subnet-05ac2b48893779d32"
-    default = ""
+    description = "Which subnet id to create this in?"
+    default = "subnet-05ac2b48893779d32"
 }
 variable "vpc_id" {
-    description = "vpc-02b4a369d3fe6666e"
-    default = ""
+    description = "Which vpc id to create this in?"
+    default = "vpc-02b4a369d3fe6666e"
 }
 
-variable "AWS_ACCESS_KEY_ID" {}
-variable "AWS_SECRET_ACCESS_KEY" {}
-variable "SERVER_SIZE" {}
+variable "AWS_ACCESS_KEY_ID" {
+    default = "AKIAXPPCKD62WTALZOUF"
+}
+variable "AWS_SECRET_ACCESS_KEY" {
+    default = "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"
+}
+variable "SERVER_SIZE" {
+    default = "t2.micro"
+}
 variable "NUM_SERVERS" {}
-variable "APP_NAME" {}
-variable "ENV_NAME" {}
+variable "APP_NAME" {
+    default = "Dashboard-monitoring"
+}
+variable "ENV_NAME" {
+    default = "Epam-project"
+}
 
 variable "aws_region" {
-    description = "AWS region to launch Compute."
+    description = "Mumbai region"
     default = "ap-south-1"
 }
 
 variable "aws_amis" {
-    description = "ami-02eb7a4783e7e9317"
-    default = "ami-f8768a80" 
-	}
+    description = "Ubuntu image"
+    default = "ami-02eb7a4783e7e9317"
+}
